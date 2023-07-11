@@ -1,0 +1,13 @@
+
+postgresql 14.6.2-2 선택
+비번 ay2111!!
+local : Korean Korea
+이건 테스트 용으로 사용 데이터 입력 후 프로그램 껐다 키면 사라짐
+실제 개발할땐 마리아 db를 사용함
+
+pgAdmin 4 라는 프로그램이고
+
+Databases 에서 postgres 에서 스키마 생성
+Schemas 에서 tables 에서 테이블 생성
+
+이름 member 테이블 하나 생성 column 하나 만들고 id 랑 name 정의
