@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>베이스: 레이아웃</title>
+    <link rel="stylesheet" href="../../css/sub2_layout.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="../../js/script1.js"></script>
+    <script src="../../js/script01.js"></script>
+    <script src="../../js/script3.js"></script>
+</head>
+<body>
+
+      <header>
+              <div id="header">
+                  <div id="topEventwrap">
+                      <div class="topEvent cf">
+                          <ul>
+                              <li class="logo"><img src="../images/eg_logo.png" alt="logo"/></li>
+                              <li>이 누리집은 대한민국 공식 전자정부 누리집 입니다.</li>
+                              <div>
+                                  <li class="minus"><a href="#"><img src="../images/minus.png" alt="minus"/></a></li>
+                                  <li><span>100%</span></li>
+                                  <li class="plus"><a href="#"><img src="../images/plus.png" alt="plus"/></a></li>
+                              </div>
+
+                              <li></li>
+                          </ul>
+                      </div><!-- id="topEvent" -->
+                  </div><!-- id="event" -->
+
+                  <div id="gnbBox">
+                      <div class="gnbWrap cf">
+                          <div id="gnbLogo">
+                              <ul>
+                                  <li><a href="../index.html"><img src="../images/mainlogo.png" target="_blank" alt="mainlogo"/></a></li>
+                                  <li class="title"><a href="../index.html" target="_blank">법제처</a></li>
+                              </ul>
+                          </div><!-- id="gnbLogo" -->
+                          <div id="gnbSearch">
+                              <div class="search">
+                                  <ul>
+                                      <li><form action="#"><input type="search" class="guide_text" value="검색어를 입력하세요"/></form></li>
+                                      <li class="searchBox"><a href="#"><img src="../images/search.png" alt="search"/></a></li>
+                                  </ul>
+                              </div>
+                          </div><!-- id="gnbSearch" -->
+                          <div id="gnbLang cf">
+                              <div class="lang">
+                                  <ul>
+                                      <li><a href="#"><img src="../images/img_head_link02.jpg" alt="img_head"/></a></li>
+                                      <li><a href="#">어린이법제처</a></li>
+                                      <li><a href="#">ENGLISH</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div><!-- id="gnbLang" -->
+                  </div><!-- id="gnbBox" -->
+                  <div id="menuWrap">
+                      <div class="oneInner">
+                          <ul class="oneDepth cf">
+                              <li><a href="#">법제업무정보</a>
+                                  <div class="twoInner">
+                                      <div class="twoDepth cf">
+                                          <ul class="cf">
+                                              <div class="menu_title">
+                                                  <div class="title_img">
+                                                      <img src="../images/mainlogo.png" alt=""/>
+                                                  </div>
+                                                  <div class="title_text">
+                                                      법제업무정보
+                                                  </div>
+
+                                              </div>
+                                          </ul>
+                                          <div class="list01">
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">정부입법</a></li>
+                                                      <li><a href="#">정부입법계획</a></li>
+                                                      <li><a href="#">입법과정안내</a></li>
+                                                      <li><a href="#">법령입안심사기준</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">입법예고</a></li>
+                                                      <li><a href="#">입법예고</a></li>
+                                                      <li><a href="#">알기쉬운 입법예고</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">행정규칙</a></li>
+                                                      <li><a href="#">발령,관리업무안내</a></li>
+                                                      <li><a href="#">행정규칙 입안,심사기준</a></li>
+                                                      <li><a href="#">훈령,예규,고시</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">법령해석</a></li>
+                                                      <li><a href="#">법령해석안내</a></li>
+                                                      <li><a href="#">법령해석 요청하기</a></li>
+                                                      <li><a href="#">법령해석 사례</a></li>
+                                                      <li><a href="#">법령해석 현황조회</a></li>
+
+
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">행정규칙</a></li>
+                                                      <li><a href="#">발령,관리업무안내</a></li>
+                                                      <li><a href="#">행정규칙 입안,심사기준</a></li>
+                                                      <li><a href="#">훈령,예규,고시</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">자치입법 의견제시</a></li>
+                                                      <li><a href="#">자치입법 의견제시 안내</a></li>
+                                                      <li><a href="#">의견제시 사례</a></li>
+
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div><!-- class="twoDepth cf -->
+                                  </div><!-- class="twoInner" -->
+                              </li>
+                              <li><a href="#">정보공개</a>
+                                  <div class="twoInner">
+                                      <div class="twoDepth cf">
+                                          <ul class="cf">
+                                              <div class="menu_title">
+                                                  <div class="title_img">
+                                                      <img src="../images/mainlogo.png" alt=""/>
+                                                  </div>
+                                                  <div class="title_text">
+                                                      정보공개
+                                                  </div>
+
+                                              </div>
+                                          </ul>
+                                          <div class="list01">
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">공표 정보</a></li>
+                                                      <li><a href="#">즐겨찾는 정보</a></li>
+                                                      <li><a href="#">사전공표정보</a></li>
+                                                      <li><a href="#">공개정보 보기</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">정책실명제</a></li>
+
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">공공데이터</a></li>
+                                                      <li><a href="#">공공데이터 제공</a></li>
+                                                      <li><a href="#">데이터 품질신고</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">법제소식지</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">이용안내</a></li>
+                                                      <li><a href="#">누리집 이용안내</a></li>
+                                                      <li><a href="#">저작권 정책</a></li>
+                                                      <li><a href="#">누리집 개선의견</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">행정규칙</a></li>
+                                                      <li><a href="#">발령,관리업무안내</a></li>
+                                                      <li><a href="#">행정규칙 입안,심사기준</a></li>
+                                                      <li><a href="#">훈령,예규,고시</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div><!-- class="twoInner" -->
+                              </li>
+                              <li><a href="#">지식창고</a>
+                                  <div class="twoInner">
+                                      <div class="twoDepth cf">
+                                          <ul class="cf">
+                                              <div class="menu_title">
+                                                  <div class="title_img">
+                                                      <img src="../images/mainlogo.png" alt=""/>
+                                                  </div>
+                                                  <div class="title_text">
+                                                      지식창고
+                                                  </div>
+
+                                              </div>
+                                          </ul>
+                                          <div class="list01">
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">법제</a></li>
+                                                      <li><a href="#">법제소개</a></li>
+                                                      <li><a href="#">법제논문 검색,내려받기</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">법제소식</a></li>
+
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">법나들이</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">간행물</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">정책연구 용역자료</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">디지털 법제정보자료</a></li>
+
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div><!-- class="twoInner" -->
+                              </li>
+                              <li><a href="#">뉴스&middot;소식</a>
+                                  <div class="twoInner">
+                                      <div class="twoDepth cf">
+                                          <ul class="cf">
+                                              <div class="menu_title">
+                                                  <div class="title_img">
+                                                      <img src="../images/mainlogo.png" alt=""/>
+                                                  </div>
+                                                  <div class="title_text">
+                                                      뉴스&middot소식
+                                                  </div>
+
+                                              </div>
+                                          </ul>
+                                          <div class="list01">
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">보도자료</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">보도설명자료</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">사진뉴스</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">공지사항</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">법제처 법령정보</a></li>
+                                                      <li><a href="#">소관법령</a></li>
+                                                      <li><a href="#">입법예고</a></li>
+                                                      <li><a href="#">행정예고</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">행정규칙</a></li>
+                                                      <li><a href="#">발령,관리업무안내</a></li>
+                                                      <li><a href="#">행정규칙 입안,심사기준</a></li>
+                                                      <li><a href="#">훈령,예규,고시</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div><!-- class="twoInner" -->
+                              </li>
+                              <li><a href="#">민원&middot;제안</a>
+                                  <div class="twoInner">
+                                      <div class="twoDepth cf">
+                                          <ul class="cf">
+                                              <div class="menu_title5">
+                                                  <div class="title_img5">
+                                                      <img src="../images/mainlogo.png" alt=""/>
+                                                  </div>
+                                                  <div class="title_text5">
+                                                      민원&middot;제안
+                                                  </div>
+
+                                              </div>
+                                          </ul>
+                                          <div class="list01">
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">전자민원</a></li>
+                                                      <li><a href="#">민원신청</a></li>
+                                                      <li><a href="#">민원편람</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">국민참여</a></li>
+                                                      <li><a href="#">국민제안</a></li>
+                                                      <li><a href="#">국민생각함</a></li>
+                                                      <li><a href="#">정책참여</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">규제개선</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">신고센터</a></li>
+                                                      <li><a href="#">예산낭비신고</a></li>
+                                                      <li><a href="#">공익신고</a></li>
+                                                      <li><a href="#">부패갑질신고</a></li>
+                                                      <li><a href="#">복지보조금부정신고</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">적극행정</a></li>
+                                                      <li><a href="#">적극행정 안내</a></li>
+                                                      <li><a href="#">공무원,정책 국민추천</a></li>
+                                                      <li><a href="#">적극행정 법제지원</a></li>
+                                                      <li><a href="#">소극행정 신고</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div><!-- class="twoInner" -->
+                              </li>
+                              <li><a href="#">법제처 소개</a>
+                                  <div class="twoInner">
+                                      <div class="twoDepth cf">
+                                          <ul class="cf">
+                                              <div class="menu_title">
+                                                  <div class="title_img">
+                                                      <img src="../images/mainlogo.png" alt=""/>
+                                                  </div>
+                                                  <div class="title_text">
+                                                      법제처 소개
+                                                  </div>
+
+                                              </div>
+                                          </ul>
+                                          <div class="list01">
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">소개</a></li>
+                                                      <li><a href="#">비전</a></li>
+                                                      <li><a href="#">홍보 자료실</a></li>
+                                                      <li><a href="#">연혁</a></li>
+                                                      <li><a href="#">상징</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">주요 기능과 사업</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">업무보고</a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">처장 소개</a></li>
+                                                      <li><a href="#">인사말</a></li>
+                                                      <li><a href="#">약력</a></li>
+                                                      <li><a href="#">역대처장소개</a></li>
+                                                      <li><a href="#">업무추진비 공개</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">조직안내</a></li>
+                                                      <li><a href="#">조직도</a></li>
+                                                      <li><a href="#">담당부서</a></li>
+                                                      <li><a href="#">담당자 연락처</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="sub_menu_list">
+                                                  <ul>
+                                                      <li class="first"><a href="#">오시는 길</a></li>
+                                                      <li><a href="#">법제처</a></li>
+                                                      <li><a href="#">층별안내도</a></li>
+                                                      <li><a href="#">서울 법제지원센터</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div><!-- class="twoInner" -->
+                              </li>
+
+                          </ul>
+                      </div><!-- class="oneInner" -->
+                  </div><!-- id="menuWrap" -->
+                  <div id="section">
+                      <div id="left_aside">
+                          <div class="menu_list">
+                              <ul>
+                                  <div class="first_list"><li><a href="#">민원&middot제안</a></li></div>
+                                  <li class="sub_list"><a href="#">전자민원</a></li>
+                                  <li class="list"><a href="#">국민참여</a></li>
+                                  <li class="list"><a href="#">규제개선</a></li>
+                                  <li class="list"><a href="#">신고센터</a></li>
+                                  <li class="list"><a href="#">적극행정</a></li>
+                              </ul>
+                          </div><!-- class="menu_list" -->
+                      </div><!-- id="left_aside" -->
+                      <div id="main_section">
+                          <div class="section_title">
+                              <div class="title_box">
+                                  <div class="h2"><h2>Q&amp;A</h2></div>
+                                  <ul>
+                                      <li class="first_img"><img src="../images/print.png" width="88" height="41" alt="print_img"/></li>
+                                      <li>민원편람</li>
+                                      <li>전자민원 &gt;</li>
+                                      <li>민원&middot제안 &gt;</li>
+                                      <li class="last_img"><img src="../images/home.png" width="30" height="21" alt="home_img"/> &gt;</li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="box">
+                              <ul>
+                                  <li>
+                                      <select name="select" id="category">
+                                          <option value="전체">전체</option>
+                                          <option value="작성자">작성자</option>
+                                          <option value="제목">제목</option>
+                                          <option value="번호">번호</option>
+                                          <option value="등록일">등록일</option>
+                                      </select>
+                                  </li>
+                                  <li>
+                                      <form action="#">
+                                          <input type="text"  class="guide_text" value="검색어를 입력하세용"/>
+                                      </form>
+                                  </li>
+                                  <img src="../images/search.png" width="42" height="42" alt="search"/>
+                              </ul>
+
+                          </div>
+                          <div id="board" class="cf">
+                              <div id="title_wrap1" class="cf">
+                                  <ul>
+                                      <li>전체 24건</li>
+                                      <li>1/3쪽</li>
+                                      <li><img src="images/rss.png" width="110" height="40" alt="RSS2.0"/></li>
+                                  </ul>
+                              </div>
+                              <div id="title_wrap2" class="cf">
+                                  <ul>
+                                      <li>클릭하시면 내용을 확인할 수 있습니다</li>
+                                  </ul>
+                              </div>
+                              <div class="first cf">
+                                  <div class="number"><span>번호</span></div>
+                                  <div class="title"><span>제목</span></div>
+                                  <div><span>등록일</span></div>
+                                  <div><span>첨부</span></div>
+                                  <div><span>조회수</span></div>
+                              </div><!-- class="first cf" -->
+
+                              <div id="board">
+                                  <dl class="accordion">
+                                      <dt>Q 한번 눌러보고 싶지 않으세요??</dt>
+                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
+                                      <dt>Q 무엇이 궁금하실까요?</dt>
+                                      <dd>A이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
+                                      <dt>Q 그만좀 궁금해 하시면안될까요우잉</dt>
+                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
+                                      <dt>Q 궁금하면 500원</dt>
+                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
+                                      <dt>Q 무엇이궁금하신가요?</dt>
+                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
+                                      <dt>Q 무엇이궁금하신가요?</dt>
+                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
+
+                                  </dl>
+                              </div><!-- id="board" -->
+                              <div id="page" class="cf">
+                                  <div class="prev">이전</div>
+                                  <div>1</div>
+                                  <div>2</div>
+                                  <div>3</div>
+                                  <div>4</div>
+                                  <div>5</div>
+                                  <div class="next">다음</div>
+                              </div>
+
+
+                          </div><!-- id="board" -->
+                          <div id="survey">
+                              <div class="survey_left">
+                                  <h3>이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
+                                  <ul>
+                                      <li>
+                                          <label for="satisfy1"><form action="post">
+                                              <input type="radio" id="satisfy1" name="satisfy" checked /><span>매우만족</span></label>
+
+                                          <label for="satisfy2"><input type="radio" id="satisfy2" name="satisfy" /><span>만족</span></label>
+
+                                          <label for="satisfy3"><input type="radio" id="satisfy3" name="satisfy" /><span>보통</span></label>
+                                          <label for="satisfy4"><input type="radio" id="satisfy4" name="satisfy" /><span>불만족</span></label>
+                                          <label for="satisfy5"><input type="radio" id="satisfy5" name="satisfy" /><span>매우불만족</span></label>
+                                          </form>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="survey_right">
+                                  <ul>
+                                      <li>
+                                          <form action="post">
+                                              <input type="text" class="guide_text" value="직접입력"/>
+                                          </form>
+                                      </li>
+                                      <li>
+                                          <img src="../images/search.png" alt=""/>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div><!-- id="main_section" -->
+                  </div>
+              </div><!-- id="header" -->
+
+      </header>
+
+
+
+      <div layout:fragment="content">
+      <!--  layout:fragment 를 넣으면 여기를 대체 한다는 뜻 include-->
+      </div>
+
+
+
+      <footer>
+              <div id="footer_top_wrap">
+                  <div class="footer_top">
+                      <div class="footer_top_left">
+                          <ul>
+                              <li class="personal"><a href="#">개인정보 처리방침</a></li>
+                              <li><a href="#">저작권 정책</a></li>
+                              <li><a href="#">누리집 개선의견</a></li>
+                              <li><a href="#">오시는 길</a></li>
+                              <li><a href="#">이용안내</a></li>
+                              <li><a href="#">소식지 신청</a></li>
+                              <li><a href="#">전화번호 안내</a></li>
+                          </ul>
+                          <ul>
+                              <!-- 나중에 이미지 각각 사진 구해서 정렬하셈 -->
+                              <li><a href="#"><img src="../images/sns_ico.png" alt="sns_ico"/></a></li>
+                          </ul>
+                      </div>
+                      <div class="footer_top_right"></div>
+                  </div><!-- class="footer_top" -->
+              </div><!-- class="footer_top_wrap" -->
+              <div id="footer_bot_wrap">
+                  <div class="footer_bot">
+                      <div class="footer_bot_text">
+                          <p>30102 세종특별자치시 도움5로 20, 정부 세종청사 법제처(7-1동)</p>
+                          <p>Copyright&copy; 1997-2023 Korea Ministry of Goverment Legislation. All rights reserved.</p>
+                          <p> 대표전화 : 044-200 국가 법령정보센터 검색방법 : 044-200-6789,6790 정부 2차 법령해석 요청 절차 안내 : 044-200-6706,6708 민원 관련 문의 : 044-200-6532</p>
+                          <p>(월~금 09:00~18:00, 공휴일 제외)	&frasl; 팩스번호: 044-200-6954 &frasl; (근무시간 외) 당직실 : 044-200-6533</p>
+                      </div><!-- class="footer_bot_text" -->
+
+                      <div class="footer_bot_img">
+                          <img src="/images/wa2023.png" alt="웹접근성"/>
+                          <img src="../../images/open.png" alt="오픈"/>
+                      </div>
+                  </div><!-- class="footer_bot" -->
+              </div><!-- id="footer_bot_wrap" -->
+              </div><!-- id="footer" -->
+
+      </footer>
+
+</body>
+</html>

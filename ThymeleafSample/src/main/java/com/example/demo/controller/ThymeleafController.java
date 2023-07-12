@@ -13,7 +13,15 @@ import java.util.Map;
 
 @Controller // 교통정리라고 보면됨
 @RequestMapping("hello")
+
+
 public class ThymeleafController {
+
+    @GetMapping("a")
+    public String showA(){
+        return "common/layout";
+    }
+
     @GetMapping("show")
     public  String showView(Model model){
         Member member = new Member(1000,"회원01");

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>pageA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!--스태틱은 안써도 경로로 자동 읽음 이거 주의-->
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/script01.js"></script>
+    <script src="../js/script1.js"></script>
+    <script src="../js/script2.js"></script>
+    <script src="../js/script3.js"></script>
+
+</head>
+<body>
+      <div layout:fragment="content">
+          <h1 align="center">pageA</h1>
+</div>
+</body>
+</html>
