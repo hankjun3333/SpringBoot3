@@ -63,11 +63,6 @@ public class ThymeleafController {
         model.addAttribute("list",directionList);
         model.addAttribute("map",memberMap);
         model.addAttribute("members",memberList);
-
-
-
-
-
-        return "useThymeleaf";
+      return "useThymeleaf";
     }
 }
