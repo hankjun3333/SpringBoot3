@@ -45,4 +45,8 @@ public class PathVariableController {
         return "submit/c";
     }
 
+    @PostMapping(value = "send",params = "h")
+    public String showHView(){
+        return "show";
+    }
 }
