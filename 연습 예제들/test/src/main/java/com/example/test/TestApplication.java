@@ -35,7 +35,7 @@ public class TestApplication {
 		//삭제처리
 		//deleteTest();
 		//퀴즈실행
-		doTest();
+		//doTest();
 	}
 
 	private void setup() {
