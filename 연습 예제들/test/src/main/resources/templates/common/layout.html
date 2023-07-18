@@ -509,22 +509,84 @@
 
                               <div id="board">
                                   <dl class="accordion">
-                                      <dt>Q 한번 눌러보고 싶지 않으세요??</dt>
-                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
-                                      <dt>Q 무엇이 궁금하실까요?</dt>
-                                      <dd>A이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
-                                      <dt>Q 그만좀 궁금해 하시면안될까요우잉</dt>
-                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
-                                      <dt>Q 궁금하면 500원</dt>
-                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
-                                      <dt>Q 무엇이궁금하신가요?</dt>
-                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
-                                      <dt>Q 무엇이궁금하신가요?</dt>
-                                      <dd>A 이것저것이 많이 궁금합니다 이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다이것저것이 많이 궁금합니다</dd>
+                                      <h1>문제 풀이 애플리케이션</h1>
+                                      <h3 th:text="${title}">제목</h3>
+                                      <!--/* 등록/변경 완료 메시지 */-->
+                                      <p th:if="${complete}" th:text="${complete}" style="color:blue"></p>
+                                      <!--등록과 변경 처리를 분리-->
+                                      <form method="POST" th:action="${testForm.newTest} ? @{/test/insert} : @{/test/update}" th:object="${testForm}">
+                                          <!--th:field 속성에 '*{필드명}'을 지정-->
+                                          <label>퀴즈 내용: </label><br>
+                                          <textarea rows="5" cols="50" th:field="*{question}"></textarea>
+                                          <br>
+                                          <div th:if="${#fields.hasErrors('question')}" th:errors="*{question}"
+                                               style="color:red"></div>
+                                          <label>퀴즈 정답: </label><br>
+                                              <input type="radio" value="true" th:field="*{answer}"  > O
+                                              <input type="radio" value="false" th:field="*{answer}" > X
+                                          <br>
+                                          <div th:if="${#fields.hasErrors('answer')}" th:errors="*{answer}"
+                                               style="color:red"></div>
+                                          <label>작성자: </label><br>
+                                          <input type="text" th:field="*{author}" />
+                                          <br>
+                                          <div th:if="${#fields.hasErrors('author')}" th:errors="*{author}"
+                                               style="color:red"></div>
+                                          <input th:if="${id}" type="hidden" th:field="*{id}" >
+                                          <input type="submit" value="저장">
+                                      </form>
+                                      <br>
+                                      <!--여기까지가 상단 영역 부분-->
 
+                                      <hr><!--신규등록인 경우만 보임-->
+                                      <div th:if="${testForm.newTest}" style="margin: 10px">
+                                          <h3>등록된 퀴즈 목록 <a th:href="@{/test/play}">플레이</a><br></h3>
+                                          <!--/* 삭제 완료 메시지 */-->
+                                          <p th:if="${delcomplete}" th:text="${delcomplete}" style="color:blue"></p>
+                                          <p th:if="${msg}" th:text="${msg}" style="color:red"></p>
+                                          <!--퀴즈 정보가 있으면 보임-->
+                                          <table border="1" th:unless="${#lists.isEmpty(list)}"
+                                                 style="table-layout: fixed;">
+                                              <tr>
+                                                  <th>ID</th>
+                                                  <th>내용</th>
+                                                  <th>해답</th>
+                                                  <th>작성자</th>
+                                                  <th>변경</th>
+                                                  <th>삭제</th>
+                                              </tr>
+                                              <tr th:each="obj : ${list}" align="center">
+                                                  <td th:text="${obj.id}"></td>
+                                                  <td th:text="${obj.question}" align="left"></td>
+                                                  <td th:text="${obj.answer} == true?'O':'X'"></td>
+                                                  <td th:text="${obj.author}"></td>
+                                                  <!--/* 변경 버튼 */-->
+                                                  <td>
+                                                      <form method="GET" th:action="@{/test/{id}(id=${obj.id})}">
+                                                          <input type="submit" value="변경">
+                                                      </form>
+                                                  </td>
+                                                  <!--/* 삭제 버튼 */-->
+                                                  <td>
+                                                      <form method="POST" th:action="@{/test/delete}">
+                                                          <input type="hidden" name="id" th:value="${obj.id}">
+                                                          <input type="submit" value="삭제">
+                                                      </form>
+                                                  </td>
+                                              </tr>
+                                          </table>
+                                          <!--퀴즈 정보가 있으면 보임-->
+                                          <p th:if="${#lists.isEmpty(list)}">등록된 퀴즈가 없습니다.</p>
+                                      </div><!--신규등록인 경우만 보임-->
+
+                                      <p th:unless="${testForm.newTest}">
+                                          <a href="#" th:href="@{/test}">CRUD 화면에 돌아가기</a>
+                                      </p>
                                   </dl>
                               </div><!-- id="board" -->
-                              <div id="page" class="cf">
+
+
+<!--                              <div id="page" class="cf">
                                   <div class="prev">이전</div>
                                   <div>1</div>
                                   <div>2</div>
@@ -532,40 +594,10 @@
                                   <div>4</div>
                                   <div>5</div>
                                   <div class="next">다음</div>
-                              </div>
+                              </div>-->
+                         </div><!-- id="board" -->
 
 
-                          </div><!-- id="board" -->
-                          <div id="survey">
-                              <div class="survey_left">
-                                  <h3>이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
-                                  <ul>
-                                      <li>
-                                          <label for="satisfy1"><form action="post">
-                                              <input type="radio" id="satisfy1" name="satisfy" checked /><span>매우만족</span></label>
-
-                                          <label for="satisfy2"><input type="radio" id="satisfy2" name="satisfy" /><span>만족</span></label>
-
-                                          <label for="satisfy3"><input type="radio" id="satisfy3" name="satisfy" /><span>보통</span></label>
-                                          <label for="satisfy4"><input type="radio" id="satisfy4" name="satisfy" /><span>불만족</span></label>
-                                          <label for="satisfy5"><input type="radio" id="satisfy5" name="satisfy" /><span>매우불만족</span></label>
-                                          </form>
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div class="survey_right">
-                                  <ul>
-                                      <li>
-                                          <form action="post">
-                                              <input type="text" class="guide_text" value="직접입력"/>
-                                          </form>
-                                      </li>
-                                      <li>
-                                          <img src="../images/search.png" alt=""/>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
                       </div><!-- id="main_section" -->
                   </div>
               </div><!-- id="header" -->

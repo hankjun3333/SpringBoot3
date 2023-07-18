@@ -37,7 +37,8 @@ public class TestController {
         //표시용 Model에 저장
         model.addAttribute("list", list);
         model.addAttribute("title","등록 폼");
-        return "crud";
+        return "common/layout";
+        //return "crud";
     }
 
     @PostMapping("/insert")

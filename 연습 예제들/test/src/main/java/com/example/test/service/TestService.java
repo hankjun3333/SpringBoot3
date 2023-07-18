@@ -24,5 +24,4 @@ public interface TestService {
     void updateTest(Test test);
     //퀴즈 삭제
     void deleteTestById(Integer id);
-
 }
