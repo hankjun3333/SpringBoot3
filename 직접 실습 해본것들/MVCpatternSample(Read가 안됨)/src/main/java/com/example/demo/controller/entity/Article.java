@@ -20,6 +20,10 @@ public class Article {
     private String title;
     @Column
     private String content;
+
+    public Long getId() {
+        return id;
+    }
     //그리고 엔티티의 대표값을 설정해줘야함 그리고 그 대표값을 id 라고 어노테이션 붙여줌
     // 그리고 필드 선언하면 값을 초기화 해줘야겟지?
 
