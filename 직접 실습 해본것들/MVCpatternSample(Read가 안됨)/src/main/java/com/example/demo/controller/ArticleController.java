@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+
 @Slf4j
 @Controller
 public class ArticleController {
@@ -36,10 +38,10 @@ public class ArticleController {
         log.info(saved.toString());
         //System.out.println(saved.toString());
         // repository/ ArticleRepository 인터페이스를 정의하면
-        //JPA에서 제공하는 CRUDRepository 인터페이스 상속해서 crud 메소드를 사용할 수 있음 save,findall 등등...
+        //JPA에서 제공하는 CRUDRepository 인터페이스 상속해서 crud 메소드를 사용할 수 있음 save,등등...
         return "";
     }
-    @GetMapping("articles/{id}")
+    @GetMapping("/articles/{id}")
     public String show(@PathVariable Long id, Model model){
         log.info("id = " + id);
         //1. id를 조회해 데이터 가져오기
@@ -48,6 +50,17 @@ public class ArticleController {
         model.addAttribute("article","articleEntity");
         //3. 뷰 페이지 반환하기
         return "articles/show";
+    }
+    @GetMapping("/articles")
+    public String index(Model model){
+        //1. 모든 데이터 가져오기
+        ArrayList<Article> articleEntityList = articleRepository.findAll();
+        //2. 모델에 데이터 등록하기
+        model.addAttribute("articleList","articleEntityList");
+
+        //3. 뷰 페이지 설정
+
+        return "articles/index";
     }
 }
 
