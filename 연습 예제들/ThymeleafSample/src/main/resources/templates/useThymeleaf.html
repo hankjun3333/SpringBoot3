@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 01: 직접 문자를 삽입 -->
+    <h1 th:text="'hello world'">표시하는 부분</h1>
+
+    <!-- 02: 인라인 처리 -->
+    <h1>안녕하세요！[[${name}]]씨</h1>
+
+    <!-- 03: 값 결합 -->
+    <!--model 이 member의 상위 객체 이니까 . 또는 대괄호[]를 통해서 접근가능-->
+
+    <h1 th:text="'오늘의 날씨는 ' + 맑았 + '습니까?'">표시하는 부분</h1>
+
+    <!--mb.id 이런식으로 접근하는게 많이씀-->
+
+.으로 접근 : <span th:text="${mb.id}">Id</span> - <span th:text="${mb.name}">이름</span> <br>
+[]으로 접근 : <span th:text="${mb['id']}">ID</span> - <span th:text="${mb['name']}">이름</span> <br>
+
+    <!--object 와 *를 활용 하여 하위 객체에 접근하는 방법-->
+<th:block th:object="${mb}">
+    {}으로 접근하는 방법: <span th:text="*{id}">ID</span> - <span th:text="*{name}">이름</span> <br>
+    []으로 접근하는 방법 : <span th:text="*{['id']}">ID</span> - <span th:text="*{['name']}">이름</span>
+</th:block>
+
+<span th:text="${list[0]}">방위</span>
+<span th:text="${list[1]}">방위</span>
+<span th:text="${list[2]}">방위</span>
+<span th:text="${list[3]}">방위</span> <br>
+
+<!--Map-->
+.으로 접근 : <span th:text="${map.hong.name}">이름 1</span>
+- <span th:text="${map.lee.name}">이름 2</span> <br>
+[]으로 접근 : <span th:text="${map['hong']['name']}">이름 1</span>
+- <span th:text="${map['lee']['name']}">이름 2</span>
+
+<!--반복-->
+<div th:each="member : ${members}">
+    <p>[[${member.id}]] : [[${member.name}]]</p>
+</div>
+
+    <!--object 쓰면 * 쓰면 바로 뭘말하는지 가리킴 여기선 member = s = * 같은걸말함-->
+    <!--${members} 이건 여기서 member1 , member2 값이 들어가있어서 이거의 갯수만큼 실행해 라는뜻-->
+    <!--controller 에서 members => memberList 찾아보면됨-->
+<div th:each="member, s : ${members}" th:object="${member}">
+    <p>
+        index - > [[${s.index}]],count - > [[${s.count}]],
+        size - > [[${s.size}]],current - > [[${s.current}]],
+        even - > [[${s.even}]],odd - > [[${s.odd}]],
+        first - > [[${s.first}]],last - > [[${s.last}]],
+        [[*{id}]] : [[*{name}]] <!--object를 의미함-->
+    </p>
+</div>
+    <!--#이나오면 format 이라고 함 형식 표기하는 형식-->
+<div th:with="today=${#dates.createNow()}">
+    yyyy년 MM월 dd일 형식 : <span th:text="${#dates.format(today,'yyyy년 MM월 dd일')}"></span><br>
+    yyyy/MM/dd 형식 : <span th:text="${#dates.format(today,'yyyy/MM/dd')}"></span> <br> <!--여기선 MM 대문자 써야됨-->
+    MM월 : <span th:text="${#dates.month(today)}"></span> <br>
+    dd일 : <span th:text="${#dates.day(today)}"></span><br>
+    요일 : <span th:text="${#dates.dayOfWeek(today)}"></span><br>
+</div>
+<!--헤더와 푸터 처럼 무족권 적으로 무족권무족권적으로 쓰니까 반드시 알아야겟지?-->
+
+
+
+
+</body>
+</html>

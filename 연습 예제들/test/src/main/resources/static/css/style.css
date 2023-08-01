@@ -1,0 +1,165 @@
+﻿*{margin:0; padding:0; list-style:none; color:black; text-decoration: none;}
+
+.topEvent:after{content:''; display:block; clear:both;}
+.gnbWrap:after{content:''; display:block; clear:both;}
+.search:after{content:''; display:block; clear:both;}
+.lang:after{content:''; display:block; clear:both;}
+.oneDepth:after{content:''; display:block; clear:both;}
+.img_box3:after{content:''; display:block; clear:both;}
+#section_bot:after{content:''; display:block; clear:both;}
+.title_link:after{content:''; display:block; clear:both;}
+.banner_co:after{content:''; display:block; clear:both;}
+.footer_top_left:after{content:''; display:block; clear:both;}
+.footer_top_right:after{content:''; display:block; clear:both;}
+#section:after{content:''; display:block; clear:both;}
+#main_section:after{content:''; display:block; clear:both;}
+.cf:after{content:''; display:block; clear:both;}
+
+/* #section_top:after{content:''; display:block; clear:both;} */
+	
+.fl{float:left;}
+.fr{float:right;}
+.cb{clear:both;}
+
+/* 제이커리 속성 */
+
+.guide{color:#cccccc;}
+
+
+#topEventwrap{width:100%; height:40px;  background:#4f6280;}
+	.topEvent{width:1420px; height:40px; margin:0 auto; background:#4f6280;}
+
+	#topEventwrap ul li{float:left; margin-top:9px; margin-left:10px; color:white; font-weight: bold;}
+	#topEventwrap ul div{float:right; }
+	#topEventwrap ul div li{line-height:20px; margin-right:10px; margin-top:10px;}
+	
+	#topEventwrap ul div span{font-weight:bold; font-size:1.2em; color:white;}
+#gnbBox{width:1420px; height:105px;/*  background:red;  */margin:0 auto;}
+	#gnbLogo{height:105px; width:400px;  float:left;}
+		#gnbLogo ul li{float:left;}
+		#gnbLogo ul li img{width: 60px; height:54px; margin-top:20px; margin-left:20px;}
+		#gnbLogo ul li.title a{line-height:105px; display:block; margin-left:10px; font-weight:bold; font-size:1.4em;}
+	#gnbSearch{height:105px; width:600px;  /* background: pink;  */float:left;}
+		#gnbSearch ul{margin-top: 26px; margin-left:94px; } 
+		#gnbSearch ul li input{height:50px; width:400px; float:left;}
+		#gnbSearch ul li img{height:50px; width:46px; float:left;}
+		
+	#gnbLang{height:105px; width:420px; background: green; float:left;}
+		.lang li img{width:105px; height:40px; margin-top:30px; margin-left:20px; }
+		.lang ul li{float:left; line-height:100px; margin-left:25px; font-weight:bold;}
+		
+
+	#menu{height:70px; width:100%; background:#ececed; margin:0 auto; box-shadow: 0px 0px 3px;}
+		.oneDepth{width:1420px; height:70px; background:#ececed; margin:0 auto; position:relative; top:0%; left:0%;}
+		.oneDepth > ul{float:left; position:absolute; top:50%; left:30%; margin-left:-25%; margin-top:-10px; }
+		.oneDepth > ul > li{ float:left; font-weight:bold; font-size:1.2em; padding:0 60px;}
+		/* .oneDepth > ul > li > a{display:block; } */
+		/* .oneDepth > ul > li > a:after{content:'|'; color: darkgray; font-weight:normal; } */
+		
+		.oneDepth ul> li:hover .twoDepth{display:block;}
+		
+		.twoDepth{width:1420px; height:450px; border:1px solid #000000; border-radius:4px;  display:none; }
+		.twoDepth ul li {display:block; font-size:0.8em;}
+		 .twoDepthwrap{display:none;}
+		 
+#section{width:1420px; height:1260px; /* background:skyblue; */ margin:0 auto;}
+
+
+#left_aside{width:300px; height:1000px; /* background:yellow; */ float:left; }
+#left_aside div:first-child{width:296px; height:200px; }
+#left_aside .first_list{font-size:2em; line-height:200px; text-align:center; border:2px double gray; border-radius: 5px; background:#405ab6; color:white; margin-top:10px; }
+#left_aside .first_list li{box-shadow:0px 0px 5px;}
+#left_aside .first_list a{padding:70px; color:white; }
+
+#left_aside .list{width:296px; height:100px;/* background:blue; */ text-align:center; border:2px solid #000000; font-size:1.8em; line-height:100px; border-radius: 5px;}
+#left_aside .sub_list{width:296px; height:100px; text-align:center; border:2px solid gray; font-size:1.8em; line-height:100px; margin-top:50px; border-radius: 5px; background:#444444; box-shadow:0px 0px 3px;}
+#left_aside .sub_list a{padding:25px 80px; color:white;}
+#left_aside .list{margin-top:10px; background:#f6f6f6; box-shadow:0px 0px 3px;}
+#left_aside .list a{padding:25px 80px; }
+	
+	
+	#main_section{width:1120px; height:1000px;  float:left;}	 
+	.title_box{width:1050px; height:134px;  float:right;}
+	.title_box ul{margin-top:25px;}
+	.title_box li{float:right; margin-right:10px; line-height:45px}
+	
+	.h2{width:150px; height:50px; float:left;  margin-top:20px; font-size:1.4em;}
+	
+.box{width:1040px; height:140px;float:right; border: 5px double #000000;}
+.box ul {margin-top:45px; margin-left:200px;}
+.box li {float:left; margin-left:10px;}
+.box select{border: 1px solid gray; padding:3px; background-color:#efefef; width:170px; height:42px;}	
+
+form input{width:350px; height:40px;}	
+.box option{color:black;}
+
+
+#board{width:1050px; height:740px; float:right;/*  background:skyblue; */}
+#title_wrap1{float:left; width:310px; height:50px;}
+#title_wrap1 li{float:left; margin-left:20px; line-height:50px;}
+#title_wrap1 li img{margin-top:5px;}
+
+#title_wrap2 {float:left; width:740px; height:50px;/*  background:red; */}
+#title_wrap2 li{float:right; padding:8px; margin-top:5px; margin-right:10px; border:1px solid gray; box-shadow:0px 0px 3px; border-radius:5px; background:#ededed;}
+
+	
+	.first> div{width:100px; float:left; height:50px; line-height:50px; text-align:center; margin:0 auto; border-top:3px solid black; border-bottom:1px solid gray; }
+	
+	div.first> div.title{width:650px; float:left; height:50px; line-height:50px; text-align:center; /* background:orange; */}
+	div.first> div.number{width:100px; float:left; height:50px; line-height:50px; text-align:center; /* background:yellow; */}
+	
+	#board>div> label> div{float:left; width:100px; line-height:50px; height:50px; text-align:center; border-bottom:1px solid gray;  font-weight:bold; cursor:pointer;}
+	#board>div> label> input{display:none;}
+
+#board> div> label> .title{width:650px; height:50px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:center; font-weight:bold; cursor:pointer;}
+
+#board> div> label> div.content_wrap{line-height: auto; height: auto; width:96%; text-align:center; padding:2%; display:none;}
+
+#board input{width=30px; height=20px;}
+
+/* #board input:checked ~ div.content_wrap{display:block;} */	
+
+
+
+.subject{font-weight:bold; font-size:20px; background:#f6f6f6; padding:30px 20px; line-height:15px;}
+.content{padding:10px 20px; font-size:18px;background:#ffffff; line-height:24px; border-bottom: 1px solid #dddddd;}	 
+
+#page{position:relative; top:50px; left:50%;  float:left;}
+	#page div{float:left; margin-left:20px; padding:5px; position:relative; left:-50%; cursor:pointer;} 
+		 
+.box{width:1040px; height:140px;float:right; border: 5px double #000000;}
+.box ul {margin-top:45px; margin-left:200px;}
+.box li {float:left; margin-left:10px;}
+.box select{border: 1px solid gray; padding:3px; background-color:#efefef; width:170px; height:42px;}	
+
+form input{width:350px; height:40px;}	
+.box option{color:black;}		 
+		 
+#survey{width:1050px; height:200px; float:right;/*  background:blue;  */border:5px double #000000; box-shadow:0px 0px 2px;}		 
+	.survey_left{width:540px; height:200px; /* background:yellow; */ float:left;}
+	.survey_left input{width:50px; height:20px;}
+	.survey_left span{line-height:100px;}
+	.survey_left h3{margin-top:30px; margin-left:10px;}
+	.survey_right{width:510px; height:200px;/*  background:skyblue; */ float:left;}
+	.survey_right ul{margin-top:80px; margin-left:20px;}
+	.survey_right li{float:left;}
+	.survey_right input{width:400px; height:40px;}
+	
+	
+	
+footer{width:100%; background:#3f4044; height:295px;}
+#footer_top_wrap{width:100%; height:80px; border-bottom:1px solid gray;}
+.footer_top{width:1420px; height:80px; margin:0 auto; }
+
+.footer_top_left li{float:left;}
+.footer_top_left li a{padding: 0 20px; line-height:80px; font-weight:bold; font-size:1.1em; color:#ffffff;}
+.footer_top_left li img{margin-top:25px; margin-left:150px;}
+
+li.personal a{font-weight:bold; font-size:1.3em; color:#dd9d0b;}
+#footer_bot_wrap{width:100%; height:213px; border-bottom:1px solid gray;}
+.footer_bot{width:1420px; height:200px; /* background:green;  */margin:0 auto;}
+	.footer_bot_text{width:1160px; height:200px; /* background:blue;  */float:left;}
+	.footer_bot_text p{line-height:35px; margin-top:10px; margin-left:10px; color:#ffffff;}
+	
+	.footer_bot_img{width:260px; height:200px;/*  background:red; */ float:left;}
+	.footer_bot_img img{margin-left:25px; margin-top:96px;}
