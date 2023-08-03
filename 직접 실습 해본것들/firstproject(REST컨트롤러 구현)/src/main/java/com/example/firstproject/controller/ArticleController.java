@@ -3,6 +3,9 @@ package com.example.firstproject.controller;
 import com.example.firstproject.dto.ArticleForm;
 import com.example.firstproject.entity.Article;
 import com.example.firstproject.repository.ArticleRepository;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,9 @@ import java.util.List;
 
 @Slf4j
 @Controller
+@Getter
+@Data
+@Setter
 public class ArticleController {
     @Autowired
     private ArticleRepository articleRepository;
@@ -40,7 +46,7 @@ public class ArticleController {
         log.info(saved.toString());
         // System.out.println(saved.toString());
 
-        return "redirect:/articles/" + saved.getId();
+        return "redirect:/articles/ " + saved.getId();
     }
 
     @GetMapping("/articles/{id}")
