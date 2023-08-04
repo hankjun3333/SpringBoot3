@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>법제처01</title>
-<!--인텔리제이 경로-->
-<link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery-1.9.1.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon.ico">
-     <script src="../js/script01.js"></script>
+    <script src="/js/script01.js"></script>
 </head>
 <body>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
@@ -443,123 +442,3 @@
         </div><!-- id="menuWrap" -->
     </div><!-- id="header" -->
 </header>
-
-<body>
-   	<div id="section">
-		<h1>문제 풀이 애플리케이션</h1>
-		<h3 th:text="${title}">제목</h3>
-		<!--/* 등록/변경 완료 메시지 */-->
-		<p th:if="${complete}" th:text="${complete}" style="color:blue"></p>
-		<!--등록과 변경 처리를 분리-->
-		<form method="POST" th:action="${testForm.newTest} ? @{/test/insert} : @{/test/update}" th:object="${testForm}">
-			<!--th:field 속성에 '*{필드명}'을 지정-->
-			<label>퀴즈 내용: </label><br> <br/>
-			<textarea rows="5" cols="50" th:field="*{question}"></textarea>
-			<br>
-			<div th:if="${#fields.hasErrors('question')}" th:errors="*{question}"
-				 style="color:red"></div> <br/>
-			<label>퀴즈 정답: </label><br>
-			<input type="radio" value="true" th:field="*{answer}" > O
-			<input type="radio" value="false" th:field="*{answer}" > X
-			<br>
-			<div th:if="${#fields.hasErrors('answer')}" th:errors="*{answer}"
-				 style="color:red">
-			</div>
-			<label>작성자: </label><br>
-			<input type="text" th:field="*{author}" />
-			<br>
-			<div th:if="${#fields.hasErrors('author')}" th:errors="*{author}"
-				 style="color:red"></div>
-			<input th:if="${id}" type="hidden" th:field="*{id}" >
-			<input type="submit" value="저장">
-		</form> <br/>
-		<br>
-		<!--여기까지가 상단 영역 부분-->
-		
-		<!--신규등록인 경우만 보임-->
-		<div th:if="${testForm.newTest}" style="margin: 10px">
-			<h3>등록된 퀴즈 목록 <a th:href="@{/test/play}">플레이</a><br></h3>
-			<!--/* 삭제 완료 메시지 */-->
-			<p th:if="${delcomplete}" th:text="${delcomplete}" style="color:blue"></p>
-			<p th:if="${msg}" th:text="${msg}" style="color:red"></p>
-			<!--퀴즈 정보가 있으면 보임-->
-			<table border="1" th:unless="${#lists.isEmpty(list)}"
-				   style="table-layout: fixed;">
-				<tr>
-					<th>ID</th>
-					<th>내용</th>
-					<th>해답</th>
-					<th>작성자</th>
-					<th>변경</th>
-					<th>삭제</th>
-				</tr>
-				<tr th:each="obj : ${list}" align="center">
-					<td th:text="${obj.id}"></td>
-					<td th:text="${obj.question}" align="left"></td>
-					<td th:text="${obj.answer} == true?'O':'X'"></td>
-					<td th:text="${obj.author}"></td>
-					<!--/* 변경 버튼 */-->
-					<td>
-						<form method="GET" th:action="@{/test/{id}(id=${obj.id})}">
-							<input type="submit" value="변경">
-						</form>
-					</td>
-					<!--/* 삭제 버튼 */-->
-					<td>
-						<form method="POST" th:action="@{/test/delete}">
-							<input type="hidden" name="id" th:value="${obj.id}">
-							<input type="submit" value="삭제">
-						</form>
-					</td>
-				</tr>
-			</table>
-			<!--퀴즈 정보가 있으면 보임-->
-			<p th:if="${#lists.isEmpty(list)}">등록된 퀴즈가 없습니다.</p>
-		</div><!--신규등록인 경우만 보임-->
-		
-		<p th:unless="${testForm.newTest}">
-			<a href="#" th:href="@{/test}" class="back">CRUD 화면에 돌아가기</a>
-		</p>
-	</div>
-
-    <footer>
-        <div id="footer_top_wrap">
-            <div class="footer_top">
-                <div class="footer_top_left">
-                    <ul>
-                        <li class="personal"><a href="#" class="showBalloon" title="개인정보 처리방침">개인정보 처리방침</a></li>
-                        <li><a href="#" class="showBalloon" title="저작권 정책">저작권 정책</a></li>
-                        <li><a href="#" class="showBalloon" title="누리집 개선의견">누리집 개선의견</a></li>
-                        <li><a href="#" class="showBalloon" title="오시는 길">오시는 길</a></li>
-                        <li><a href="#" class="showBalloon" title="이용안내">이용안내</a></li>
-                        <li><a href="#" class="showBalloon" title="소식지 신청">소식지 신청</a></li>
-                        <li><a href="#" class="showBalloon" title="전화번호 안내">전화번호 안내</a></li>
-                    </ul>
-                    <ul>
-                        <!-- 나중에 이미지 각각 사진 구해서 정렬하셈 -->
-                        <li><a href="#"><img src="images/sns_ico.png" alt="sns_ico"/></a></li>
-                    </ul>
-                </div>
-                <div class="footer_top_right"></div>
-            </div><!-- class="footer_top" -->
-        </div><!-- class="footer_top_wrap" -->
-        <div id="footer_bot_wrap">
-            <div class="footer_bot">
-                <div class="footer_bot_text">
-                    <p>30102 세종특별자치시 도움5로 20, 정부 세종청사 법제처(7-1동)</p>
-                    <p>Copyright&copy; 1997-2023 Korea Ministry of Goverment Legislation. All rights reserved.</p>
-                    <p> 대표전화 : 044-200 국가 법령정보센터 검색방법 : 044-200-6789,6790 정부 2차 법령해석 요청 절차 안내 : 044-200-6706,6708 민원 관련 문의 : 044-200-6532</p>
-                    <p>(월~금 09:00~18:00, 공휴일 제외)	&frasl; 팩스번호: 044-200-6954 &frasl; (근무시간 외) 당직실 : 044-200-6533</p>
-                </div><!-- class="footer_bot_text" -->
-
-                <div class="footer_bot_img">
-                    <img src="images/wa2023.png" alt="웹접근성"/>
-                    <img src="images/open.png" alt="오픈"/>
-                </div>
-            </div><!-- class="footer_bot" -->
-        </div><!-- id="footer_bot_wrap" -->
-        </div><!-- id="footer" -->
-    </footer>
-</body>
-</html>
-
