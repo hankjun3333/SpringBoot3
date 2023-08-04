@@ -1,0 +1,59 @@
+aws 배포하는방법
+
+1. 인스턴스를 생성한다 linux 2버전 선택
+2. 리눅스를 실행시킨다. 업데이트 시켜준다 sudo yum update
+3. hostname 해서 이름 조회
+sudo hostnamectl set-hostname ByeongJun 호스트 네임 변경
+sudo 붙여서 관리자 권한으로 실행해야 함
+4. date 해서 서버시간 조회 이거 미국기준이라 바꿔줘야됨
+sudo timedatectl set-timezone Asia/Seoul 서울로 바꿔줌
+5. 자바 설치 yum list 통해서 조회
+yum list | grep java-17 자바 17버전만 조회함
+자바를 다운로드 해줌
+sudo yum install java-17-amazon-correto-headless.x86_64 입력해줌
+6. java -version 
+javac -version 자바 , 자바 컴파일러 버전확인
+7. pwd (print working directory) 현재 위치알려줌 리눅스 명령어
+8 mkdir make directory 디렉토리 생성
+(mkdir ByeongJun 이렇게 생성)
+9. amazon-linux-extras | grep maria 마리아 찾음
+10. sudo amazon-linux-extras install mariadb10.5 마리아 db10.5설치
+11. mariadb -V 하면 버전나옴
+13. 마리아 db 켜져있나 확인은
+sudo systemctl status mariadb 로 확인
+14. 실행은 sudo systemctl start mariadb 해주면 실행
+15. 초기 패스워드 설정해줘야됨 
+mysqladmin -u root -p 쳐서 비번입력하면 접속됨
+------mysql workbench에 접속----------
+1. hostname에는 aws 고정 ip주소를 입력해줘야 된다.!
+2.여기서 네트워크에서 aws 3306포트 허가해줘야됨
+3. 자 여기까지 했는데도 워크벤치에서 연결이 불가능하다 왜 와이?
+외부에서 접근 가능한 계정으로 접속을 해줘야 한다!
+
+4.mysql -u root -p 비번치고 접속한 다음에
+create user 'ByeongJun' identified by '비밀번호';
+use mysql; mysql (데이터 베이스 쓰겟단 것이고)
+목록확인은 show databases; 하면됨
+select user, host from user;
+ByeongJun 이라는 아이드를 이용해서 접근 해보겟다이말임
+(워크벤치로 돌아가서)
+새로 만들고 username 에다가 ByeongJun을 써줘야됨
+username 밑에 있는 패스워드는 1234 위에 쿼리로 생성햇던 비번 써야됨
+자 그럼 들어와졋을텐데
+고정 ip 주소 입력해주고 키파일은 다운로드 받아서 입력해주면됨
+ByeongJun 폴더 안에다가 jar 파일 넣어주면됨
+
+워크벤치에서 database 하나 생성 해보는데 안되면
+grant all privileges on *.* to 'ByeongJun'@'%' with grant option;
+(모든 권한부여)
+flush privileges; 하면 워크벤치 db하나 생김 (워크벤치껏다켜야됨)
+
+----db 생성이 된다는뜻 이제----
+
+그래들 열어서 tasks 밑에 build 밑에 bootjar 더블클릭하면
+build쪽에 jar 파일 하나 생김 그거 파일 질라에 넣으면 배포는 됨
+
+
+
+
+
